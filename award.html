@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"
+             content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="format-detection" content="email=no">
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body style="background:#3dcd8e;">
+    <script src="/resources/js/tools/sui/zepto.min.js"></script>
+    <!-- <script src="/resources/js/activity/fastclick.min.js"></script> -->
+    <script type="text/javascript">
+    /* 动态换算rem和px值  */
+       var rem =20;
+        changeW();
+        window.addEventListener("resize", changeW, false);
+        function changeW() {
+            rem = 20 / 375 * document.documentElement.clientWidth;
+            document.documentElement.style.fontSize = rem + "px";
+        }
+        window.addEventListener("resize", changeW, false);
+    </script>
+    <script type="text/javascript">
+        /*获取url参数*/
+        var _channel = getQueryString('channel');
+        var _token = getQueryString('token');
+        function getQueryString(name) {
+            var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return unescape(r[2]);
+            }
+            return null;
+        }
+    </script>
+    <script type="text/javascript">
+         //跳转理财列表
+        $(".person_list").on('click',function(){
+            if(_channel){
+                window.guangqunApp.toAppProjects_personal();
+            }else{
+                window.location.href="/static/template/list.html";
+            }
+        })
+    </script>
+    <div class="inner">
+        <div class="bannerOne">
+           <img src="img/images/banner.png" alt="" />
+        </div>
+        <div class="bannerTwo">
+            <div class="activityTime">活动时间6.28~7.28</div>
+            <div class="bannerContent">
+               <p>炎炎夏日，正是激情与灵感迸发的季节，广群给你来点不一样的感官体验~</p>
+               <p>投资指定标的即可获得<span>优酷、腾讯、乐视、爱奇艺等VIP会员</span>。</p>
+               <p>还有更刺激的排名英雄榜等你~</p>
+               <p>活动期间累积投资金额排名<span>TOP3</span>的尊享用户更有<span>iPhone7Plus 、进口原装榨汁机</span>等丰厚壕礼。</p>
+               <p>激情一夏，乐享盛宴~赶紧一起燃起来吧~</p>
+            </div>
+        </div>
+        <div class="topInvestor">
+            <div class="share_list">
+                <ul class="peopleList2">
+                    <li class="line1">排行</li>
+                    <li class="line2">投资用户</li>
+                    <li class="line3">累计投资金额</li>
+                </ul>
+                <div class="gold_list afterSeven">
+                    <ul class="first-l">
+                        <li class="online1 picGold"><img src="img/images/gold.png" alt="" /></li>
+                        <li class="online2">134****4567</li>
+                        <li class="online3">1,000,000.00</li>
+                    </ul>
+                    <ul class="first-l">
+                        <li class="online1 picGold"><img src="img/images/yin.png" alt="" /></li>
+                        <li class="online2">134****4567</li>
+                        <li class="online3">1,000,000.00</li>
+                    </ul>
+                    <ul class="first-l">
+                        <li class="online1 picGold"><img src="img/images/tong.png" alt="" /></li>
+                        <li class="online2">134****4567</li>
+                        <li class="online3">1,000,000.00</li>
+                    </ul>
+                    <ul class="first-all">
+                        <li class="online1 picYin">4</li>
+                        <li class="online2">134****4567</li>
+                        <li class="online3">1,000,000.00</li>
+                    </ul>
+                    <ul class="first-all">
+                        <li class="online1 picYin">5</li>
+                        <li class="online2">134****4567</li>
+                        <li class="online3">1,000,000.00</li>
+                    </ul>
+                    <ul class="first-all">
+                        <li class="online1 picYin">6</li>
+                        <li class="online2">134****4567</li>
+                        <li class="online3">1,000,000.00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="t_go">
+            <ul>
+                <li><img src="img/images/lookAward.png" alt="" /></li>
+                <li><img src="img/images/goTou.png" alt="" /></li>
+            </ul>
+        </div>
+    </div>
+    </body>
+</html>
